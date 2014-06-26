@@ -120,7 +120,7 @@
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/templates/browse.html \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/templates/login.html \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/templates/menu.html \
+/Users/penn/Projects/Spicewords/platforms/android/assets/www/templates/message.html \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/templates/playlist.html \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/templates/playlists.html \
-/Users/penn/Projects/Spicewords/platforms/android/assets/www/templates/search.html \
 /Users/penn/Projects/Spicewords/platforms/android/ant-build/AndroidManifest.xml \
