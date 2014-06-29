@@ -1,16 +1,39 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.constant('spiceRef', new Firebase('https://spicewords.firebaseio.com/'))
+
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, spiceRef) {
   // Form data for the login modal
   $scope.loginData = {};
+  $scope.loginStatus = {
+    status: 'logout'
+  };
 
-  $scope.favorites = [
-    'Yuri S.',
-    'Penn S.',
-    'Venkytesh B.',
-    'Golly A.',
-    'Jessica V.'
-  ]
+  var auth = new FirebaseSimpleLogin(spiceRef, function (error, user) {
+    if (error) {
+      console.log(error);
+      alert(error);
+      $scope.loginStatus.error = error;
+      $scope.loginStatus.status = 'error'
+      /*
+      switch(error.code) {
+        case 'INVALID_EMAIL':
+        case 'INVALID_PASSWORD':
+        default:
+      }
+      */
+    } else if (user) {
+      console.log(user.uid);
+      $scope.loginStatus.user = user;
+      $scope.loginStatus.status = 'login';
+      $location.path('/app/message');
+    } else {
+      // user is logged out
+      $scope.loginStatus.user = null;
+      $scope.loginStatus.status = 'logout';
+      $scope.login();
+    }
+  });
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
@@ -33,11 +56,18 @@ angular.module('starter.controllers', [])
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
 
-    // Simulate a login delay. Remove this and replace with your login
-    // code if using a login system
-    $timeout(function() {
-      $scope.closeLogin();
-    }, 1000);
+    if ($scope.loginStatus.status == 'logout') {
+      auth.login('password', $scope.loginData);
+    }
+  };
+
+  $scope.doSignup = function () {
+    auth.createUser($scope.loginData.email, $scope.loginData.password, function (error, user) {
+      if (!error) {
+        console.log('User Id: ' + user.uid + ', Email: ' + user.email);
+        auth.login('password', $scope.loginData);
+      }
+    });
   };
 })
 
@@ -53,4 +83,18 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('MessageCtrl', function($scope, $stateParams) {
+  $scope.favorites = [
+    'Yuri S.',
+    'Penn S.',
+    'Venkytesh B.',
+    'Golly A.',
+    'Jessica V.'
+  ]
+
+})
+
+.controller('ChatCtrl', function($scope, $stateParams) {
 })
