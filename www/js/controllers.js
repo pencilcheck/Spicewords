@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
 .constant('spiceRef', new Firebase('https://spicewords.firebaseio.com/'))
+.constant('chatsRef', new Firebase('https://spicewords.firebaseio.com/opened_chats'))
 
 .controller('AppCtrl', function($scope, $location, $ionicModal, $timeout, spiceRef) {
   // Form data for the login modal
@@ -8,13 +9,6 @@ angular.module('starter.controllers', [])
   $scope.loginStatus = {
     status: 'logout'
   };
-
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
 
   $scope.auth = new FirebaseSimpleLogin(spiceRef, function (error, user) {
     if (error) {
@@ -56,9 +50,7 @@ angular.module('starter.controllers', [])
   $scope.doLogin = function (data) {
     console.log('Doing login', $scope.loginData);
 
-    if ($scope.loginStatus.status == 'logout') {
-      $scope.auth.login('password', $scope.loginData);
-    }
+    $scope.auth.login('password', $scope.loginData);
   };
 
   $scope.doSignup = function (data) {
@@ -76,6 +68,13 @@ angular.module('starter.controllers', [])
       }
     });
   };
+
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/login.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
 })
 
 .controller('PlaylistsCtrl', function($scope) {
@@ -92,7 +91,9 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('MessageCtrl', function($scope, $stateParams) {
+.controller('MessageCtrl', function($scope, $stateParams, $location, chatsRef) {
+  $scope.chats = $firebase(chatsRef);
+
   $scope.favorites = [
     'Yuri S.',
     'Penn S.',
@@ -101,6 +102,19 @@ angular.module('starter.controllers', [])
     'Jessica V.'
   ]
 
+  $scope.openOrCreateChat = function (chatId) {
+
+    if (typeof chatId == 'undefined') {
+
+      chatId = Math.floor(Math.random() * 5000001);
+      $scope.chats.$add({
+        id: chatId,
+        title: $scope.favorites[Math.floor(Math.random() * $scope.favorites.length)]
+      });
+    }
+
+    $location.path('/chats/' + chatId);
+  }
 })
 
 .controller('ChatCtrl', function($scope, $stateParams) {
