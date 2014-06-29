@@ -103,5 +103,29 @@ angular.module('starter.controllers', [])
 
 })
 
+.controller('ChatListCtrl', function($scope, $stateParams) {
+  $scope.chats = [
+    'Yuri S.',
+    'Penn S.',
+    'Venkytesh B.',
+    'Golly A.',
+    'Jessica V.',
+    'Pe4nn A.',
+    'Pe8nn Z.',
+    'F6ire B.',
+    'J1essica V.',
+    'P2enn A.',
+    'P3enn Z.',
+    'F4ire B.',
+    'A5mazing A.',
+    'Balls D.',
+    '99F4ire B.',
+    '2A5mazing A.',
+    '1Balls D.',
+    'Chicken F.'
+  ]
+
+})
+
 .controller('ChatCtrl', function($scope, $stateParams) {
 })
