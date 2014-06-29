@@ -1,53 +1,80 @@
-<html>
-  <head>
-    <title>Spice Words- Main Screen</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.css">
-  </head>
-    <body>
-    <div class="mainBodyWrapper">
-        <div class="chatWrapper">
-            <ul>
-                <li>
-                    <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
-                      <span class="personSay">the name of my village is Rathanpur</span> 
-                    </div>
-                </li>
-                <li>
-                    <div class="bubble2"> <!-- erasing name <span class="personName2">Person name:</span>--> <br>
-                      <span class="personSay2">say hellooo yes the name of my village is rathanpur</span>
-                    </div>   
-                </li>
-                 <li>
-                    <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
-                      <span class="personSay">wtf bro i dont get this at all. i love burgers and such and this is a long text so lets see what happens when its super long and you have a lot ot say, should we limit the character?
-                      </span> 
-                    </div>
-                </li>
-                <li>
-                    <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
-                      <span class="personSay">the name of my village is Rathanpur</span> 
-                    </div>
-                </li>
-                <li>
-                    <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
-                      <span class="personSay">the name of my village is Rathanpur</span> 
-                    </div>
-                </li>
-                
-                <li>
-                    <div class="bubble2"> <!-- erasing name <span class="personName2">Person name:</span>--> <br>
-                      <span class="personSay2">listen bro</span>
-                    </div>   
-                </li>
-                <li>
-                    <div class="bubble2"> <!-- erasing name <span class="personName2">Person name:</span>--> <br>
-                      <span class="personSay2">All the words in this vocabulary test are from the Academic Word List These are the 570 most frequently used words in academic texts. You need to learn these words if you wish to pass an academic exam such as IELTS, TOEFL or PTE Academic or if you wish to study in an English speaking university.</span>
-                    </div>   
-                </li>
-            </ul>
-        </div>  
-    </div>
+<ion-view title="Spicewords">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content scroll="false" class="has-header background">    
+    <ion-scroll>
 
-</body>
-</html>
+            <div class="chatWrapper">
+                <ul>
+                    <li>
+                        <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
+                          <span class="personSay">the name of my village is Rathanpur</span> 
+                        </div>
+                    </li>
+                     <li>
+                        <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
+                          <span class="personSay">the name of my village is Rathanpur</span> 
+                        </div>
+                    </li>
+                     <li>
+                        <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
+                          <span class="personSay">the name of my village is Rathanpur</span> 
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bubble2"> <!-- erasing name <span class="personName2">Person name:</span>--> <br>
+                          <span class="personSay2">say hellooo yes the name of my village is rathanpur</span>
+                        </div>   
+                    </li>
+                     <li>
+                        <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
+                          <span class="personSay">wtf bro i dont get this at all. i love burgers and such and this is a long text so lets see what happens when its super long and you have a lot ot say, should we limit the character?
+                          </span> 
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
+                          <span class="personSay">the name of my village is Rathanpur</span> 
+                        </div>
+                    </li>
+                    <li>
+                        <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
+                          <span class="personSay">the name of my village is Rathanpur</span> 
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="bubble2"> <!-- erasing name <span class="personName2">Person name:</span>--> <br>
+                          <span class="personSay2">listen bro</span>
+                        </div>   
+                    </li>
+                    <li>
+                        <div class="bubble2"> <!-- erasing name <span class="personName2">Person name:</span>--> <br>
+                          <span class="personSay2">All the words in this vocabulary test are from the Academic Word List These are the 570 most frequently used words in academic texts. You need to learn these words if you wish to pass an academic exam such as IELTS, TOEFL or PTE Academic or if you wish to study in an English speaking university.</span>
+                        </div>   
+                    </li>
+                     <li>
+                        <div class="bubble2"> <!-- erasing name <span class="personName2">Person name:</span>--> <br>
+                          <span class="personSay2">All the words in this vocabulary test are from the Academic Word List These are the 570 most frequently used words in academic texts. You need to learn these words if you wish to pass an academic exam such as IELTS, TOEFL or PTE Academic or if you wish to study in an English speaking university.</span>
+                        </div>   
+                    </li>
+                    <li>
+                        <div class="bubble"> <!-- erasing name <span class="personName">Person name:</span>--> <br>
+                          <span class="personSay">the name of my village is Rathanpur</span> 
+                        </div>
+                    </li>
+                </ul>
+            </div>  
+    </ion-scroll>
+    <div class="list list-inset ChatMessageBox">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Type message ..." />
+      </label>
+    </div>
+  </ion-content>
+</ion-view>
+
+
+  
