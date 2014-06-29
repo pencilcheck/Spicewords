@@ -75,6 +75,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           controller: 'PlaylistCtrl'
         }
       }
+    })
+
+    .state('app.test', {
+      url: "/pennsu",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/pennsu.html"
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/message');
