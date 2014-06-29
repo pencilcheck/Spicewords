@@ -36,9 +36,11 @@
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/index.html \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/js \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/lib \
+/Users/penn/Projects/Spicewords/platforms/android/assets/www/pennsu.html \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/plugins \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/README.md \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/templates \
+/Users/penn/Projects/Spicewords/platforms/android/assets/www/css/main.css \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/css/style.css \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/img/ionic.png \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/js/app.js \
