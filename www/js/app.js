@@ -34,7 +34,8 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       url: "/message",
       views: {
         'menuContent' :{
-          templateUrl: "templates/message.html"
+          templateUrl: "templates/message.html",
+          controller: 'MessageCtrl'
         }
       }
     })

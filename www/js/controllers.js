@@ -2,14 +2,21 @@ angular.module('starter.controllers', [])
 
 .constant('spiceRef', new Firebase('https://spicewords.firebaseio.com/'))
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, spiceRef) {
+.controller('AppCtrl', function($scope, $location, $ionicModal, $timeout, spiceRef) {
   // Form data for the login modal
   $scope.loginData = {};
   $scope.loginStatus = {
     status: 'logout'
   };
 
-  var auth = new FirebaseSimpleLogin(spiceRef, function (error, user) {
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/login.html', {
+    scope: $scope
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+
+  $scope.auth = new FirebaseSimpleLogin(spiceRef, function (error, user) {
     if (error) {
       console.log(error);
       alert(error);
@@ -35,13 +42,6 @@ angular.module('starter.controllers', [])
     }
   });
 
-  // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
-    scope: $scope
-  }).then(function(modal) {
-    $scope.modal = modal;
-  });
-
   // Triggered in the login modal to close it
   $scope.closeLogin = function() {
     $scope.modal.hide();
@@ -53,19 +53,26 @@ angular.module('starter.controllers', [])
   };
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
+  $scope.doLogin = function (data) {
     console.log('Doing login', $scope.loginData);
 
     if ($scope.loginStatus.status == 'logout') {
-      auth.login('password', $scope.loginData);
+      $scope.auth.login('password', $scope.loginData);
     }
   };
 
-  $scope.doSignup = function () {
-    auth.createUser($scope.loginData.email, $scope.loginData.password, function (error, user) {
+  $scope.doSignup = function (data) {
+    console.log('Doing signup', $scope.loginData);
+
+    $scope.auth.createUser($scope.loginData.email, $scope.loginData.password, function (error, user) {
       if (!error) {
         console.log('User Id: ' + user.uid + ', Email: ' + user.email);
-        auth.login('password', $scope.loginData);
+        //$scope.auth.login('password', $scope.loginData);
+      } else {
+        console.log(error);
+        alert(error);
+        $scope.loginStatus.error = error;
+        $scope.loginStatus.status = 'error'
       }
     });
   };

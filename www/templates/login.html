@@ -6,22 +6,20 @@
     </div>
   </ion-header-bar>
   <ion-content>
-    <form name="form" ng-submit="doLogin()">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Email</span>
-          <input type="text" ng-model="loginData.email" required>
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="loginData.password" required>
-        </label>
-        <label class="item">
-          <button class="button button-positive" type="submit" ng-disabled="form.$invalid" ng-click="doLogin(loginData)">Log in</button>
-          <button class="button button-balanced" type="submit" ng-disabled="form.$invalid" ng-click="doSignup(loginData)">Sign up</button>
-        </label>
-      </div>
-    </form>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="text" ng-model="loginData.email" required>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password" ng-model="loginData.password" required>
+      </label>
+      <label class="item">
+        <a class="button button-positive" ng-disabled="form.$invalid" ng-click="doLogin(loginData)">Log in</a>
+        <a class="button button-balanced" ng-disabled="form.$invalid" ng-click="doSignup(loginData)">Sign up</a>
+      </label>
+    </div>
   </ion-content>
 </div>
 
