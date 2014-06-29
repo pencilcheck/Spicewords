@@ -42,6 +42,7 @@ input.MessageBox {
   font-size: 16px;
   line-height: 100px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .topPeers{
@@ -97,17 +98,41 @@ input.MessageBox {
   margin-right: auto;
   width: 550px;
 }
-.scroll-view{
+.scroll-view-messages{
   height:90% !important;
   position: absolute !important;
   width: 550px !important;
 }
+
+.noti_bubble {
+  position: absolute;
+  top: 1px;
+  right: -3px;
+  line-height: 19px;
+  background-color: rgba(255, 186, 0, 0.91);
+  color: white;
+  font-weight: bold;
+  font-size: 0.55em;
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px gray;
+  height: 22px;
+  width: 22px;
+}
+
+.Mainmessages{
+  height:550px !important;
+  position: absolute !important;
+  
+}
+
 div.list.list-inset.ChatMessageBox {
   position: fixed;
   bottom: 4px;
   width: 95%;
 }
-
+ion-scroll.Mainmessages.scroll-view.ionic-scroll {
+  margin-top: 30px;
+}
 
 /* chat CSS*/
 body { padding-top:30px; }
@@ -143,10 +168,10 @@ body { padding-top:30px; }
 }
 
 .personName {  padding-left:0px; color:#5586e5; font-weight:100;}
-.personSay {   padding-left:0px; color:#000; font-weight:500;}
+.personSay {   padding-left:0px; color:#000; font-weight:500; padding-bottom:15px;}
 
 .personName2 { float: right;  padding-left:0px; color:#5586e5; font-weight:100;}
-.personSay2 {  float: right; padding-left:0px; color:#000; font-weight:500;}
+.personSay2 {  float: right; padding-left:0px; color:#000; font-weight:500;padding-bottom:15px;}
 
 ul { list-style-type:none; padding:0px; margin:0px;  }
 ul li {   padding-left: 0px; }
@@ -167,9 +192,8 @@ ul li {   padding-left: 0px; }
         -o-transform:      rotate( 29deg ) skew( -35deg );
         -webkit-transform: rotate( 29deg ) skew( -35deg );
     width:  20px;
-    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    box-shadow:-2px 2px 2px 0 rgba(0, 0, 0, 0.14);
     left: -9px; 
-  
   }
 
 .bubble{
@@ -204,7 +228,7 @@ ul li {   padding-left: 0px; }
         -o-transform:      rotate( 205deg ) skew( -35deg );
         -webkit-transform: rotate( 205deg ) skew( -35deg );
     width:  20px;
-    box-shadow: -2px 2px 2px 0 rgba( 178, 178, 178, .4 );
+    box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.17););
      
   }
 

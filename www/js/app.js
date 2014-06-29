@@ -85,6 +85,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
           templateUrl: "templates/pennsu.html"
         }
       }
+    })
+    .state('app.test2', {
+      url: "/mainpennsu",
+      views: {
+        'menuContent' :{
+          templateUrl: "templates/mainpennsu.html",
+          controller: 'ChatListCtrl'
+        }
+      }
     });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/message');
