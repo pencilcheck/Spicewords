@@ -16,11 +16,13 @@
               </ul>
             </div>  
         </ion-scroll>
-        <form ui-keypress="{13: 'submitAddMessage($event)'}" ng-submit="submitAddMessage()" class="list list-inset ChatMessageBox">
-          <label class="item item-input">
-            <input type="text" placeholder="Type message ..." ng-model="newMessage" />
-            <i class="ion-play"></i>
-          </label>
-        </form>
+        <div class="list list-inset ChatMessageBox">
+          <form ui-keypress="{13: 'submitAddMessage($event)'}" ng-submit="submitAddMessage()">
+            <label class="item item-input">
+              <input type="text" placeholder="Type message ..." ng-model="newMessage" />
+              <i class="ion-play"></i>
+            </label>
+          </form>
+        </div>
     </ion-content>
 </ion-view>
