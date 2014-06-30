@@ -1,9 +1,9 @@
 angular.module('starter.controllers', [])
 
 .constant('spiceRef', new Firebase('https://spicewords.firebaseio.com/'))
-.constant('chatsRef', new Firebase('https://spicewords.firebaseio.com/opened_chats'))
+.constant('openChatsRef', new Firebase('https://spicewords.firebaseio.com/opened_chats'))
 
-.controller('AppCtrl', function($scope, $location, $ionicModal, $timeout, spiceRef) {
+.controller('AppCtrl', function($scope, $firebase, $location, $ionicModal, $timeout, spiceRef) {
   // Form data for the login modal
   $scope.loginData = {};
   $scope.loginStatus = {
@@ -91,8 +91,8 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('MessageCtrl', function($scope, $stateParams, $location, chatsRef) {
-  $scope.chats = $firebase(chatsRef);
+.controller('MessageCtrl', function($scope, $firebase, $stateParams, $location, openChatsRef) {
+  $scope.chats = $firebase(openChatsRef);
 
   $scope.favorites = [
     'Yuri S.',
@@ -113,11 +113,11 @@ angular.module('starter.controllers', [])
       });
     }
 
-    $location.path('/chats/' + chatId);
+    $location.path('/app/chats/' + chatId);
   }
 })
 
-.controller('ChatListCtrl', function($scope, $stateParams) {
+.controller('ChatListCtrl', function($scope, $firebase, $stateParams) {
   $scope.chats = [
     'Yuri S.',
     'Penn S.',
@@ -141,5 +141,56 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChatCtrl', function($scope, $stateParams) {
+.controller('ChatCtrl', function($scope, $firebase, $timeout, $stateParams, openChatsRef, $ionicScrollDelegate) {
+  var messagesRef = new Firebase('https://spicewords.firebaseio.com/chats/' + $stateParams.chatId);
+
+  $scope.newMessage = "";
+  $scope.roomsObj = $firebase(openChatsRef);
+  $scope.messagesObj = $firebase(messagesRef);
+  $scope.username = 'User' + Math.floor(Math.random() * 501);
+
+  var scrollBottom = function() {
+    // Resize and then scroll to the bottom
+    $ionicScrollDelegate.resize();
+    $timeout(function() {
+      $ionicScrollDelegate.scrollBottom();
+    });
+  };
+
+  $scope.$watch('messagesObj', function (value) {
+    var messagesObj = angular.fromJson(angular.toJson(value));
+    $timeout(function () {scrollBottom()});
+    $scope.messages = [];
+
+    angular.forEach(messagesObj, function (message, key) {
+      $scope.messages.push(message);
+    });
+
+    if ($scope.messages.length) {
+      loaded = true;
+    }
+  }, true);
+
+  $scope.$watch('roomsObj', function (value) {
+    var roomsObj = angular.fromJson(angular.toJson(value));
+    $scope.room = false;
+
+    angular.forEach(roomsObj, function (room, key) {
+      if ($scope.room) return;
+      if (room.id == $stateParams.roomId) {
+        $scope.room = room;
+      };
+    });
+  }, true);
+    
+  $scope.submitAddMessage = function() {
+    $scope.messagesObj.$add({
+      created_by: this.username,
+      content: this.newMessage,
+      created_at: new Date()
+    });
+    this.newMessage = "";
+
+    scrollBottom();
+  };
 })
