@@ -167,6 +167,15 @@ body { padding-top:30px; }
   top: 6px;
 }
 
+i.ion-play {
+margin-right: 10px;
+padding-left:15px;
+}
+
+.card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
+padding-right: 0px !important;
+}
+
 .personName {  padding-left:0px; color:#5586e5; font-weight:100;}
 .personSay {   padding-left:0px; color:#000; font-weight:500; padding-bottom:15px;}
 
