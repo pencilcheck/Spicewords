@@ -6,7 +6,7 @@
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Type message ...">
+        <input type="text" placeholder="Type message + select reciepent...">
       </label>
     </div>
     <h2>The Crew</h2>
@@ -15,6 +15,27 @@
             {{favorite}}
         </a>
     </ion-scroll>
+
+    <ion-scroll direction="x" scrollbar-y="false" has-bouncing="false" zooming="false" class="wide-as-needed" >
+      <div class="mainPerson avatar"  ng-click="message(favorite)">
+         <a class="nameofPerson">0enn S.</a>
+      </div>
+
+      <div class="mainPerson avatar"  ng-click="message(favorite)">
+         <a class="nameofPerson">Yuri K.</a>
+      </div>
+
+      <div class="mainPerson avatar"  ng-click="message(favorite)">
+         <a class="nameofPerson">Venny S.</a>
+      </div>
+
+      <div class="mainPerson avatar"  ng-click="message(favorite)">
+         <a class="nameofPerson">WTFisthis S.</a>
+      </div>
+    
+      </ion-scroll>
+    
+    
     <h2>The List</h2>
     <ion-scroll direction="x" scrollbar-y="false" has-bouncing="false" zooming="false" class="wide-as-needed">
         <a class="circle side-margin inset-shadow" ng-click="openOrCreateChat()">
