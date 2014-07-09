@@ -104,6 +104,12 @@ input.MessageBox {
   width: 550px !important;
 }
 
+.select-user-chat {
+  height:50px !important;
+  position: absolute !important;
+  width: 550px !important;
+}
+
 .noti_bubble {
   position: absolute;
   top: 1px;

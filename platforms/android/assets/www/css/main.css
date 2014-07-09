@@ -8,6 +8,11 @@ input.MessageBox {
   overflow: scroll;
   white-space: nowrap;
 }
+.chat-as-needed {
+  overflow-y: scroll;
+  white-space: nowrap;
+}
+
 
 .side-margin {
   margin-left: 10px !important;
@@ -37,6 +42,7 @@ input.MessageBox {
   font-size: 16px;
   line-height: 100px;
   cursor: pointer;
+  margin-bottom: 20px;
 }
 
 .topPeers{
@@ -82,3 +88,172 @@ input.MessageBox {
 	float: left;
 	padding-left: 5px;
 }
+/* Empty. Add your own CSS if you like */
+.background {
+  background-color: #42b4e6;
+}
+.chatWrapper {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  width: 550px;
+}
+.scroll-view-messages{
+  height:90% !important;
+  position: absolute !important;
+  width: 550px !important;
+}
+
+.noti_bubble {
+  position: absolute;
+  top: 1px;
+  right: -3px;
+  line-height: 19px;
+  background-color: rgba(255, 186, 0, 0.91);
+  color: white;
+  font-weight: bold;
+  font-size: 0.55em;
+  border-radius: 30px;
+  box-shadow: 1px 1px 1px gray;
+  height: 22px;
+  width: 22px;
+}
+
+.Mainmessages{
+  height:550px !important;
+  position: absolute !important;
+  
+}
+
+div.list.list-inset.ChatMessageBox {
+  position: fixed;
+  bottom: 4px;
+  width: 95%;
+}
+ion-scroll.Mainmessages.scroll-view.ionic-scroll {
+  margin-top: 30px;
+}
+
+/* chat CSS*/
+body { padding-top:30px; }
+.widget .panel-body { padding:0px; }
+.widget .list-group { margin-bottom: 0; }
+.widget .panel-title { display:inline }
+.widget .label-info { float: right; }
+.widget li.list-group-item {border-radius: 0;border: 0;border-top: 1px solid #ddd;}
+.widget li.list-group-item:hover { background-color: rgba(86,61,124,.1); }
+.widget .mic-info { color: #666666;font-size: 11px; }
+.widget .action { margin-top:5px; }
+.widget .comment-text { font-size: 12px; }
+.widget .btn-block { border-top-left-radius:0px;border-top-right-radius:0px; }
+.header { padding: 10px;}
+.col-xs-2 .col-md-1 img { padding-right: 20px; color:#FFFFFF;}
+.row img { float:left; padding-right: 4px; padding-left: 4px;}
+
+.time { 
+  position: relative;
+  top: 5px;
+  font-size: 8px;
+  color: #F00;
+  left: -50px;
+}
+
+.time2 { 
+  font-size: 8px;
+  padding-left: 0px;
+  color: #FF0A0A;
+  position: relative;
+  right: 50px;
+  top: 6px;
+}
+
+i.ion-play {
+margin-right: 10px;
+padding-left:15px;
+}
+
+.card .item.item-input input, .list-inset .item.item-input input, .padding > .list .item.item-input input, .padding-horizontal > .list .item.item-input input {
+padding-right: 0px !important;
+}
+
+.personName {  padding-left:0px; color:#5586e5; font-weight:100;}
+.personSay {   padding-left:0px; color:#000; font-weight:500; padding-bottom:15px;}
+
+.personName2 { float: right;  padding-left:0px; color:#5586e5; font-weight:100;}
+.personSay2 {  float: right; padding-left:0px; color:#000; font-weight:500;padding-bottom:15px;}
+
+ul { list-style-type:none; padding:0px; margin:0px;  }
+ul li {   padding-left: 0px; }
+
+
+
+.bubble::before {
+    display:block;
+    background-color: #F2F2F2;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+        -moz-transform:    rotate( 29deg ) skew( -35deg );
+        -ms-transform:     rotate( 29deg ) skew( -35deg );
+        -o-transform:      rotate( 29deg ) skew( -35deg );
+        -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+    box-shadow:-2px 2px 2px 0 rgba(0, 0, 0, 0.14);
+    left: -9px; 
+  }
+
+.bubble{
+    display:block;
+    background-color: #F2F2F2;
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+    margin: 10px 10px;
+    border-color: #cdecb0;
+    width: 60%;
+    
+  }
+
+.bubble2::before {
+  display:block;
+  float:right;
+    background-color: rgba(190, 218, 160, 1);
+    content: "\00a0";
+    display: block;
+    height: 19px;
+    /*position: absolute;*/
+  position:relative;
+    left: 26px;
+  top: 11px;
+    transform:             rotate( 205deg ) skew( -35deg );
+        -moz-transform:    rotate( 205deg ) skew( -35deg );
+        -ms-transform:     rotate( 205deg ) skew( -35deg );
+        -o-transform:      rotate( 205deg ) skew( -35deg );
+        -webkit-transform: rotate( 205deg ) skew( -35deg );
+    width:  20px;
+    box-shadow: -2px 2px 2px 0 rgba(0, 0, 0, 0.17););
+     
+  }
+
+.bubble2{
+    display:block;
+    width: 60%;
+    background-color: rgba(190, 218, 160, 1);
+    border-radius: 5px;
+    box-shadow: 0 0 6px #B2B2B2;
+    display: inline-block;
+    padding: 10px 18px;
+    position: relative;
+    vertical-align: top;
+    margin: 10px 10px;
+    border-color: #cdecb0;
+    
+  }
+
+/*END CHAT CSS */

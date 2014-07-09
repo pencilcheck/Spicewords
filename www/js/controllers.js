@@ -1,6 +1,7 @@
 angular.module('starter.controllers', [])
 
 .constant('spiceRef', new Firebase('https://spicewords.firebaseio.com/'))
+.constant('usersRef', new Firebase('https://spicewords.firebaseio.com/users'))
 .constant('openChatsRef', new Firebase('https://spicewords.firebaseio.com/opened_chats'))
 
 .controller('AppCtrl', function($scope, $firebase, $location, $ionicModal, $timeout, spiceRef) {
@@ -141,13 +142,19 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('ChatCtrl', function($scope, $firebase, $timeout, $stateParams, openChatsRef, $ionicScrollDelegate) {
+.controller('ChatCtrl', function($scope, $firebase, $timeout, $stateParams, openChatsRef, usersRef, $ionicScrollDelegate, Spicer) {
   var messagesRef = new Firebase('https://spicewords.firebaseio.com/chats/' + $stateParams.chatId);
 
   $scope.newMessage = "";
+  $scope.usersObj = $firebase(usersRef);
   $scope.roomsObj = $firebase(openChatsRef);
   $scope.messagesObj = $firebase(messagesRef);
-  $scope.username = 'User' + Math.floor(Math.random() * 501);
+
+  //$scope.usersObj.$add({
+    //id: Math.floor(Math.random() * 501),
+    //name: 'Yuri Kleban',
+    //phone_number: '1231231233'
+  //});
 
   var scrollBottom = function() {
     // Resize and then scroll to the bottom
@@ -156,6 +163,12 @@ angular.module('starter.controllers', [])
       $ionicScrollDelegate.scrollBottom();
     });
   };
+
+  $scope.usersObj.$on("child_added", function (wrapper) {
+    $scope.users = $scope.users || {};
+    var data = wrapper.snapshot.value;
+    $scope.users[data.id] = data;
+  });
 
   $scope.$watch('messagesObj', function (value) {
     var messagesObj = angular.fromJson(angular.toJson(value));
@@ -182,15 +195,36 @@ angular.module('starter.controllers', [])
       };
     });
   }, true);
+
+  $scope.typePlaceholder = "Please select a user";
+
+  $scope.selectSendAs = function (userId) {
+    if ($scope.userId == userId) {
+      $scope.userId = null;
+    } else {
+      $scope.userId = userId;
+    }
+
+    $scope.typePlaceholder = "Type message as " + $scope.users[$scope.userId].name
+  }
     
   $scope.submitAddMessage = function() {
-    $scope.messagesObj.$add({
-      created_by: this.username,
-      content: this.newMessage,
-      created_at: new Date()
-    });
-    this.newMessage = "";
+    if (!$scope.userId) {
+      alert('please select a user');
+    } else {
 
-    scrollBottom();
+      // somehow newMessage can only be accessed via this
+      var spicedMessage = Spicer(this.newMessage);
+
+      $scope.messagesObj.$add({
+        created_by: $scope.userId,
+        content: this.newMessage,
+        spiced_content: spicedMessage,
+        created_at: new Date()
+      });
+      this.newMessage = "";
+
+      scrollBottom();
+    }
   };
 })

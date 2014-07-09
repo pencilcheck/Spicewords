@@ -1,0 +1,28 @@
+<ion-view title="Spicewords">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" class="has-header background">    
+        <ion-scroll class="scroll-view-messages">
+
+            <div class="chatWrapper">
+              <ul>
+                <li ng-repeat="message in messages | orderBy: 'created_at'" ng-show="message.content">
+                  <div ng-class="{bubble: message.created_by == username, bubble2: message.created_by != username}">
+                    <br>
+                    <span class="personSay">{{message.content}}</span> 
+                  </div>
+                </li>
+              </ul>
+            </div>  
+        </ion-scroll>
+        <div class="list list-inset ChatMessageBox">
+          <form ui-keypress="{13: 'submitAddMessage($event)'}" ng-submit="submitAddMessage()">
+            <label class="item item-input">
+              <input type="text" placeholder="Type message ..." ng-model="newMessage" />
+              <i ng-click="submitAddMessage()" class="ion-play"></i>
+            </label>
+          </form>
+        </div>
+    </ion-content>
+</ion-view>

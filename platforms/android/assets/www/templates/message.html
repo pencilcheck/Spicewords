@@ -15,5 +15,14 @@
             {{favorite}}
         </a>
     </ion-scroll>
+    <h2>The List</h2>
+    <ion-scroll direction="x" scrollbar-y="false" has-bouncing="false" zooming="false" class="wide-as-needed">
+        <a class="circle side-margin inset-shadow" ng-click="openOrCreateChat()">
+            New Chat
+        </a>
+        <a class="circle side-margin inset-shadow" ng-repeat="chat in chats" ng-click="openOrCreateChat(chat.id)">
+            {{favorite}}
+        </a>
+    </ion-scroll>
   </ion-content>
 </ion-view>
