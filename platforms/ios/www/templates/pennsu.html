@@ -1,0 +1,40 @@
+<ion-view title="Spicewords">
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    </ion-nav-buttons>
+    <ion-content scroll="false" class="has-header background">    
+        <ion-scroll class="scroll-view-messages">
+
+            <div class="chatWrapper">
+              <ul>
+                <li ng-repeat="message in messages | orderBy: 'created_at'" ng-show="message.content">
+                  <div ng-class="{bubble: message.created_by == userId, bubble2: message.created_by != userId}">
+                    <br>
+                    <span class="personSay">{{message.content}}</span>
+                    <span class="personSay" style="color: red;">{{message.spiced_content}}</span>
+                    <span class="personTimestamp">{{message.created_at | timestamp}}</span>  
+                  </div>
+                </li>
+              </ul>
+            </div>  
+        </ion-scroll>
+
+        <!-- select user -->
+        <ion-scroll direction="x" scrollbar-y="false" has-bouncing="false" zooming="false" class="wide-as-needed select-user-chat">
+            <a style="background-color: red;" ng-repeat="(userId, user) in users" ng-click="selectSendAs(userId)">
+                {{user.name}}
+                ({{userId}})
+            </a>
+        </ion-scroll>
+        <!-- select user ends -->
+
+        <div class="list list-inset ChatMessageBox">
+          <form ui-keypress="{13: 'submitAddMessage($event)'}" ng-submit="submitAddMessage()">
+            <label class="item item-input">
+              <input type="text" placeholder="{{typePlaceholder}}" ng-model="newMessage" />
+              <i ng-click="submitAddMessage()" class="ion-play"></i>
+            </label>
+          </form>
+        </div>
+    </ion-content>
+</ion-view>

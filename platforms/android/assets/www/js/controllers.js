@@ -152,8 +152,8 @@ angular.module('starter.controllers', [])
 
   //$scope.usersObj.$add({
     //id: Math.floor(Math.random() * 501),
-    //name: 'Yuri Kleban',
-    //phone_number: '1231231233'
+    //name: 'Penn Su',
+    //phone_number: '3213213213'
   //});
 
   var scrollBottom = function() {
