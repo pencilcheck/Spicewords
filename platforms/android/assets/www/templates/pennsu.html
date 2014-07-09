@@ -11,6 +11,7 @@
                   <div ng-class="{bubble: message.created_by == userId, bubble2: message.created_by != userId}">
                     <br>
                     <span class="personSay">{{message.content}}</span>
+                    <span class="personSay">{{message.spiced_content}}</span>
                     <span class="personTimestamp">{{message.created_at | timestamp}}</span>  
                   </div>
                 </li>

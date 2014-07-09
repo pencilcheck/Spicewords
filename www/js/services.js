@@ -26,8 +26,16 @@ angular.module('starter.services', [])
 
   var probWS = 0.5;
 
+  probObjs.$on('value', function (wrapper) {
+    probWS = parseInt(wrapper.snapshot.value['probWS']);
+    console.log('new probWS');
+    console.log(probWS);
+  });
+
   probObjs.$on('child_changed', function (wrapper) {
     probWS = parseInt(wrapper.snapshot.value['probWS']);
+    console.log('new probWS');
+    console.log(probWS);
   });
 
   var dict = {};
@@ -38,7 +46,8 @@ angular.module('starter.services', [])
   return function (message) {
     var words = message.split(' ');
     var spiceWords = words.map(function (word) {
-      if (Math.random() > (1.0-probWS) && dict[word]) {
+      //if (dict[word]) {
+      if (Math.floor(Math.random() * 10) <= Math.floor(probWS * 10) && dict[word]) {
         return dict[word][Math.floor(Math.random() * (dict[word].length-1))]
       } else {
         return word;
