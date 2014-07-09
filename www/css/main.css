@@ -7,6 +7,7 @@ input.MessageBox {
 .wide-as-needed {
   overflow: scroll;
   white-space: nowrap;
+  padding-bottom: 10px;
 }
 .chat-as-needed {
   overflow-y: scroll;
@@ -138,6 +139,10 @@ div.list.list-inset.ChatMessageBox {
 }
 ion-scroll.Mainmessages.scroll-view.ionic-scroll {
   margin-top: 30px;
+}
+
+::-webkit-scrollbar { 
+    display: none; 
 }
 
 /* chat CSS*/
@@ -297,7 +302,6 @@ a.avatar { color: transparent; } /* IE fix: removes blue border */
 div.mainPerson {
   text-align: center;
   width: 100px;
-  vertical-align: middle;
   display: inline-block;
   background:url(http://www.american.edu/uploads/profiles/large/chris_palmer_profile_11.jpg) no-repeat;
   height:100px;
