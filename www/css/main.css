@@ -271,8 +271,8 @@ span.personTimestamp {
   float: right;
   font-size: 5px;
   position: relative;
-  bottom: -14px;
-  right: -13px;
+  bottom: -13px;
+  right: -10px;
   color: rgb(204, 53, 53);
 }
 
