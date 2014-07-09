@@ -97,18 +97,18 @@ input.MessageBox {
   padding-right: 15px;
   padding-left: 15px;
   margin-right: auto;
-  width: 550px;
+  width: 100%;
 }
 .scroll-view-messages{
   height:90% !important;
   position: absolute !important;
-  width: 550px !important;
+  width: 100% !important;
 }
 
 .select-user-chat {
   height:50px !important;
   position: absolute !important;
-  width: 550px !important;
+  width: 100% !important;
 }
 
 .noti_bubble {
@@ -127,7 +127,7 @@ input.MessageBox {
 }
 
 .Mainmessages{
-  height:550px !important;
+  height:100% !important;
   position: absolute !important;
   
 }
@@ -227,7 +227,7 @@ ul li {   padding-left: 0px; }
     vertical-align: top;
     margin: 10px 10px;
     border-color: #cdecb0;
-    width: 60%;
+    width: 94%;
     
   }
 
@@ -254,7 +254,7 @@ ul li {   padding-left: 0px; }
 
 .bubble2{
     display:block;
-    width: 60%;
+    width: 94%;
     background-color: rgba(238, 235, 166, 1);
     border-radius: 5px;
     box-shadow: 0 0 6px #B2B2B2;
@@ -270,8 +270,6 @@ ul li {   padding-left: 0px; }
 span.personTimestamp {
   float: right;
   font-size: 5px;
-  position: relative;
-  bottom: -13px;
   color: rgb(204, 53, 53);
 }
 
