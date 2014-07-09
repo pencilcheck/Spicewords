@@ -90,7 +90,7 @@ input.MessageBox {
 }
 /* Empty. Add your own CSS if you like */
 .background {
-  background-color: #42b4e6;
+  background-color: #FFCC00;
 }
 .chatWrapper {
   padding-right: 15px;
@@ -100,6 +100,12 @@ input.MessageBox {
 }
 .scroll-view-messages{
   height:90% !important;
+  position: absolute !important;
+  width: 550px !important;
+}
+
+.select-user-chat {
+  height:50px !important;
   position: absolute !important;
   width: 550px !important;
 }
@@ -223,7 +229,7 @@ ul li {   padding-left: 0px; }
 .bubble2::before {
   display:block;
   float:right;
-    background-color: rgba(190, 218, 160, 1);
+    background-color: rgba(238, 235, 166, 1);
     content: "\00a0";
     display: block;
     height: 19px;
@@ -244,7 +250,7 @@ ul li {   padding-left: 0px; }
 .bubble2{
     display:block;
     width: 60%;
-    background-color: rgba(190, 218, 160, 1);
+    background-color: rgba(238, 235, 166, 1);
     border-radius: 5px;
     box-shadow: 0 0 6px #B2B2B2;
     display: inline-block;
@@ -256,4 +262,52 @@ ul li {   padding-left: 0px; }
     
   }
 
+span.personTimestamp {
+  float: right;
+  font-size: 7px;
+  position: relative;
+  bottom: -14px;
+  right: -13px;
+  color: rgb(204, 53, 53);
+}
+
 /*END CHAT CSS */
+/* Circle Avatar Styles */
+ 
+.avatar {
+  line-height: 0 !important;   /* remove line-height */ 
+  display: inline-block !important;  /* circle wraps image */
+  margin: 5px !important;
+  border-radius: 50% !important; /* relative value */
+  border: 3px solid white !important;/* border width   */
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.4) !important;  
+  transition: linear 0.25s !important;
+  width:100px !important;
+}
+.avatar img {
+  border-radius: 50%; /* relative value for
+           adjustable image size */
+}
+.avatar:hover {
+  transition: ease-out 0.3s;
+  transform: scale(0.8) rotate(20deg);
+}
+a.avatar { color: transparent; } /* IE fix: removes blue border */
+
+div.mainPerson {
+  text-align: center;
+  width: 100px;
+  vertical-align: middle;
+  display: inline-block;
+  background:url(http://www.american.edu/uploads/profiles/large/chris_palmer_profile_11.jpg) no-repeat;
+  height:100px;
+  background-size: 100px;
+}
+a.nameofPerson {
+  top: 45px;
+  position:relative;
+  color: rgb(177, 255, 11);
+  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+}
+
+
