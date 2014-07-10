@@ -10,10 +10,13 @@
     "angularfire": "~0.7.1",
     "moment": "~2.7.0",
     "polymer": "Polymer/polymer#~0.3.3",
-    "core-elements": "Polymer/core-elements#~0.3.3",
-    "paper-elements": "Polymer/paper-elements#~0.3.3"
+    "core-elements": "Polymer/core-elements#master",
+    "paper-elements": "Polymer/paper-elements#master"
   },
   "resolutions": {
-    "firebase-simple-login": "~1.6.1"
+    "firebase-simple-login": "~1.6.1",
+    "polymer": "master",
+    "platform": "master",
+    "core-component-page": "master"
   }
 }
