@@ -326,3 +326,7 @@ paper-icon-button {
   z-index: 1000;
 }
 
+paper-input {
+margin-bottom: -25px;
+}
+
