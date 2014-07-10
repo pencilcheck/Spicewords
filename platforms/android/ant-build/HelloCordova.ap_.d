@@ -41,10 +41,11 @@
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/README.md \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/templates \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/css/main.css \
-/Users/penn/Projects/Spicewords/platforms/android/assets/www/css/style.css \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/img/ionic.png \
+/Users/penn/Projects/Spicewords/platforms/android/assets/www/img/keyboard.png \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/js/app.js \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/js/controllers.js \
+/Users/penn/Projects/Spicewords/platforms/android/assets/www/js/directives.js \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/js/filters.js \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/js/services.js \
 /Users/penn/Projects/Spicewords/platforms/android/assets/www/lib/angular \
