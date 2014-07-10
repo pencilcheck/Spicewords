@@ -1,21 +1,18 @@
-<ion-view title="Spicewords">
+<ion-view title="Spicewords" unresolved touch-action="auto">
   <ion-nav-buttons side="left">
     <!--<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
-    <paper-icon-button icon="menu" menu-toggle="left"></paper-icon-button>
+    <paper-icon-button icon="menu" id="navheader" menu-toggle="left"></paper-icon-button>
   </ion-nav-buttons>
   <ion-content class="has-header background">
     <div class="list list-inset">
       <label class="item item-input">
         <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Type message + select reciepent...">
+        <paper-input multiline rows="3" type="text" placeholder="Type message + select reciepent..."></paper-input>
       </label>
     </div>
     <paper-button label="flat button">TEST</paper-button>
+  
     
-    <core-scroll-header-panel>
-  <core-toolbar>Header</core-toolbar>
-  <div content>Content goes here...</div>
-</core-scroll-header-panel>
 
     <h2>The Crew</h2>
     <!-- getting rid of this to start using new version
