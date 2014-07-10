@@ -113,8 +113,7 @@ input.MessageBox {
 
 .noti_bubble {
   position: absolute;
-  top: 1px;
-  right: -3px;
+  top: 10px;
   line-height: 19px;
   background-color: rgba(255, 186, 0, 0.91);
   color: white;
@@ -327,6 +326,6 @@ paper-icon-button {
 }
 
 paper-input {
-margin-bottom: -25px;
+  margin-bottom: -25px;
 }
 

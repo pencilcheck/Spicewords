@@ -1,7 +1,8 @@
 <ion-view title="Spicewords" unresolved touch-action="auto">
   <ion-nav-buttons side="left">
     <!--<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
-    <paper-icon-button icon="menu" id="navheader" menu-toggle="left"></paper-icon-button>
+    <paper-icon-button icon="menu" menu-toggle="left"></paper-icon-button>
+
   </ion-nav-buttons>
   <ion-content class="has-header background">
     <div class="list list-inset">
@@ -27,10 +28,12 @@
     <ion-scroll direction="x" scrollbar-y="false" has-bouncing="false" zooming="false" class="wide-as-needed" >
       <div class="mainPerson avatar"  ng-click="message(favorite)">
          <a class="nameofPerson">0enn S.</a>
+         <div class="noti_bubble">2</div>
       </div>
 
       <div class="mainPerson avatar"  ng-click="message(favorite)">
          <a class="nameofPerson">Yuri K.</a>
+         <div class="noti_bubble">6</div>
       </div>
 
       <div class="mainPerson avatar"  ng-click="message(favorite)">
@@ -39,6 +42,7 @@
 
       <div class="mainPerson avatar"  ng-click="message(favorite)">
          <a class="nameofPerson">WTFisthis S.</a>
+         <div class="noti_bubble">1</div>
       </div>
     
       </ion-scroll>
