@@ -321,4 +321,8 @@ a.nameofPerson {
   z-index: 10000;
 }
 
+/*Hamburger menu icon */
+paper-icon-button {
+  z-index: 1000;
+}
 

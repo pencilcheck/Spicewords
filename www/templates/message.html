@@ -1,6 +1,7 @@
 <ion-view title="Spicewords">
   <ion-nav-buttons side="left">
-    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    <!--<button menu-toggle="left" class="button button-icon icon ion-navicon"></button>-->
+    <paper-icon-button icon="menu" menu-toggle="left"></paper-icon-button>
   </ion-nav-buttons>
   <ion-content class="has-header background">
     <div class="list list-inset">
@@ -10,7 +11,12 @@
       </label>
     </div>
     <paper-button label="flat button">TEST</paper-button>
-    <paper-fab icon="favorite"></paper-fab>
+    
+    <core-scroll-header-panel>
+  <core-toolbar>Header</core-toolbar>
+  <div content>Content goes here...</div>
+</core-scroll-header-panel>
+
     <h2>The Crew</h2>
     <!-- getting rid of this to start using new version
     <ion-scroll direction="x" scrollbar-y="false" has-bouncing="false" zooming="false" class="wide-as-needed">
@@ -39,11 +45,7 @@
       </div>
     
       </ion-scroll>
-<<<<<<< HEAD
 
-    
-=======
->>>>>>> 31c7f2740d16fbc963d967e9ae6792d6361606d0
     
     <h2>The List</h2>
     <ion-scroll direction="x" scrollbar-y="false" has-bouncing="false" zooming="false" class="wide-as-needed">
