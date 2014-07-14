@@ -91,7 +91,7 @@ input.MessageBox {
 }
 /* Empty. Add your own CSS if you like */
 .background {
-  background-color: #FFCC00;
+  background-color: #3F51B5;
 }
 .chatWrapper {
   padding-right: 15px;
@@ -113,8 +113,7 @@ input.MessageBox {
 
 .noti_bubble {
   position: absolute;
-  top: 1px;
-  right: -3px;
+  top: 10px;
   line-height: 19px;
   background-color: rgba(255, 186, 0, 0.91);
   color: white;
@@ -316,8 +315,17 @@ a.nameofPerson {
   position: relative;
   cursor: pointer;
   float:right;
-  margin-top:15%;
-  margin-right:-1%;
+  margin-top:20%;
+  margin-right:-5%;
+  z-index: 10000;
 }
 
+/*Hamburger menu icon */
+paper-icon-button {
+  z-index: 1000;
+}
+
+paper-input {
+  margin-bottom: -25px;
+}
 
